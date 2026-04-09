@@ -9,103 +9,129 @@
 
     <header>
         <h1>Formulário de Doação de Sangue</h1>
-
-        <div class="getaround-container">
-          <div class="getaround-button">
-            <img src="assets/gota-de-agua.svg" alt="gota" class="getaround-icon">
-          </div>
-          <div class="getaround-tooltip">
-              <p>Ver tabela de compatibilidae</p>
-          </div>
-        </div>
-
-
     </header>
 
-    <main>
+    <main class="doacao_main">
 
-        <form id="form" class="formulario-adocao" method="post">
+        <div class="flex">
 
-            <section class="card">
-                <label for="nome">Nome completo</label>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>    
-            </section>
+            <div id="form_cena">
+                
+                <div class="doacao_texto">
+                    <p>Doar sangue é um gesto simples, rápido e extremamente poderoso: em poucos minutos, você pode salvar até quatro vidas. Seu sangue é essencial para cirurgias, tratamentos e emergências, fazendo a diferença quando cada segundo conta. Além disso, antes da doação você passa por uma avaliação básica de saúde, cuidando também de você. É seguro, solidário e transforma empatia em ação — um pequeno gesto com um impacto enorme.</p>
+                </div>
 
-            <section class="card">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" placeholder="seuemail@exemplo.com"required>
-            </section>
+                <form id="form" class="formulario-doacao" method="post">
+                    <section class="doacao_titulo">
+                        <h1>Dados Para Doção</h1>
+                        <p>Preencha as informacoes abaixo para iniciarmos sua analise de adoção.</p>
+                    </section>
 
-            <section class="card">
-                <label for="idade">Idade</label>
-                <input type="text" id="idade" name="idade" placeholder="18"required>
-            </section>
+                    <section class="card">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu Nome">
+                    </section>
 
-            <section class="card">
-                <label for="peso">Peso</label>
-                <input type="text" id="peso" name="peso" placeholder="62"required>
-            </section>
+                    <section class="card" hidden>
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="seuemail@exemplo.com">
+                    </section>
 
-            <section class="card">
-                <p class="tipo_texto">Tipo Sanguíneo</p>
-                <label class="opcao" for="a_positivo">
-                    <input type="radio" id="a_positivo" name="tipo_s" value="a_positivo" required>
-                    <span>A+</span>
-                </label>
-                <label class="opcao" for="a_negativo">
-                    <input type="radio" id="a_negativo" name="tipo_s" value="a_negativo" required>
-                    <span>A-</span>
-                </label>
-                <label class="opcao" for="b_positivo">
-                    <input type="radio" id="b_positivo" name="tipo_s" value="b_positivo" required>
-                    <span>B+</span>
-                </label>
-                <label class="opcao" for="b_negativo">
-                    <input type="radio" id="b_negativo" name="tipo_s" value="b_negativo" required>
-                    <span>B-</span>
-                </label>
-                <label class="opcao" for="ab_positivo">
-                    <input type="radio" id="ab_positivo" name="tipo_s" value="ab_positivo" required>
-                    <span>AB+</span>
-                </label>
-                <label class="opcao" for="ab_negativo">
-                    <input type="radio" id="ab_negativo" name="tipo_s" value="ab_negativo" required>
-                    <span>AB-</span>
-                </label>
-                <label class="opcao" for="o_positivo">
-                    <input type="radio" id="o_positivo" name="tipo_s" value="o_positivo" required>
-                    <span>O+</span>
-                </label>
-                <label class="opcao" for="o_negativo">
-                    <input type="radio" id="o_negativo" name="tipo_s" value="o_negativo" required>
-                    <span>O-</span>
-                </label>
-            </section>
 
-            <section class="card">
-                <label for="telefone">Telefone</label>
-                <input type="text" id="telefone" name="telefone" placeholder="(47) 99999-9999"required>
-            </section>
+                    <section class="card" hidden>
+                        <label for="idade">Idade</label>
+                        <input type="text" id="idade" name="idade" placeholder="18">
+                    </section>
 
-            <section class="card">
-                <label for="cidade">Cidade</label>
-                <input type="text" id="cidade" name="cidade" placeholder="Joinville" required>
-            </section>
 
-            <section class="card">
-                <label for="estado">Estado</label>
-                <input type="text" id="estado" name="estado" placeholder="Santa Catarina" required>
-            </section>    
-        </form>
-        
-            <div id="tabela">
+                    <section class="card"  hidden>
+                        <label for="peso">Peso</label>
+                        <input type="text" id="peso" name="peso" placeholder="62">
+                    </section>
+
+
+                    <section class="card" hidden>
+                        <p class="tipo_texto">Tipo Sanguíneo</p>
+                        <div id="tipo_container">
+                            <label class="opcao" for="a_positivo">
+                                <input type="radio" id="a_positivo" name="tipo_s" value="a_positivo" >
+                                <span>A+</span>
+                            </label>
+                            <label class="opcao" for="a_negativo">
+                                <input type="radio" id="a_negativo" name="tipo_s" value="a_negativo" >
+                                <span>A-</span>
+                            </label>
+                            <label class="opcao" for="b_positivo">
+                                <input type="radio" id="b_positivo" name="tipo_s" value="b_positivo" >
+                                <span>B+</span>
+                            </label>
+                            <label class="opcao" for="b_negativo">
+                                <input type="radio" id="b_negativo" name="tipo_s" value="b_negativo" >
+                                <span>B-</span>
+                            </label>
+                            <label class="opcao" for="ab_positivo">
+                                <input type="radio" id="ab_positivo" name="tipo_s" value="ab_positivo" >
+                                <span>AB+</span>
+                            </label>
+                            <label class="opcao" for="ab_negativo">
+                                <input type="radio" id="ab_negativo" name="tipo_s" value="ab_negativo" >
+                                <span>AB-</span>
+                            </label>
+                            <label class="opcao" for="o_positivo">
+                                <input type="radio" id="o_positivo" name="tipo_s" value="o_positivo" >
+                                <span>O+</span>
+                            </label>
+                            <label class="opcao" for="o_negativo">
+                                <input type="radio" id="o_negativo" name="tipo_s" value="o_negativo" >
+                                <span>O-</span>
+                            </label>    
+                        </div>
+                    
+                    </section>
+
+
+                    <section class="card"  hidden>
+                        <label for="telefone">Telefone</label>
+                        <input type="text" id="telefone" name="telefone" placeholder="(47) 99999-9999">
+                    </section>
+
+
+                    <section class="card" hidden>
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" placeholder="Joinville">
+                    </section>
+
+
+                    <section class="card" hidden>
+                        <label for="estado">Estado</label>
+                        <input type="text" id="estado" name="estado" placeholder="Santa Catarina">
+                    </section>
+
+
+                    <div id="botao_enviar">
+                        <input type="submit" id="botao_enviar_form">
+                    </div>
+
+                </form>
 
             </div>
+            
+            
+            <div id="tabela">
+
+                <div class="tabela_titulo">
+                    <h1>Tabela de Compatibilidade</h1>
+                </div>
+
+            </div>    
+        </div>
+
+        
         
     </main>
 
     <footer>
-        <p>&copy;2026 Isabela.Todos os direitos reservados</p>
+        <p>&copy;2026 Isabela. Todos os direitos reservados</p>
     </footer>
     
 </body>
