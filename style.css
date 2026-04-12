@@ -104,13 +104,48 @@ footer{
 
 #botao_proximo,
 #botao_enviar{
-  background: #FFDFDF;
-  border: 0;
-  border-radius: 20px;
-  padding: 11px 19px;
-  font-size: 18px;
-  font-weight: 700;
   cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    overflow: hidden;
+    color: #e95c5c;
+    border: 2px solid #e95c5c;
+    border-radius: 6px;
+    position: relative;
+}
+
+#botao_proximo::before,
+#botao_enviar::before {
+  position: absolute;
+  content: "";
+  background: #fcd3d3;
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+#botao_proximo:hover,
+#botao_enviar:hover{
+  color: #000000;
+} 
+
+#botao_proximo:before,
+#botao_enviar:before {
+  top: 100%;
+  left: 100%;
+  transition: 0.3s all;
+}
+
+#botao_proximo:hover::before,
+#botao_enviar:hover::before {
+  top: -30px;
+  left: -30px;
 }
 
 .tabela{
