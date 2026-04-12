@@ -4,6 +4,8 @@ body{
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(158, 27, 27);
 }
 
 header{
@@ -19,48 +21,53 @@ header{
 
 .flex{
   display: flex;
+  height: 100%;
 }
 
 #form{
-  position: relative;
   overflow: visible;
 }
 
 footer{
   background: #be1010;
-  height: 67px;
-  width: 100%;
-  align-items: center;
-  display: flex;  
-  z-index: 4;
   color: #ffff;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  position: fixed;
+  height: 70px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
 }
 
-.adocao_main{
-  padding: 42px 20px 24px;
+.doacao_main{
   flex: 1;
+  min-height: 0;
+  margin: 0;
 }
 
 #form_cena{
   width: 635px;
-  height: 738px;
+  background-color: #ffff;
+  height: 100%;
+  overflow-y: auto;
   left: 0;
-  border-right: 3px solid rgb(99, 19, 19);;
+  border-right: 3px solid rgb(99, 19, 19);
 }
 
-#tabela{
+#tabela_cena{
   width: 1285px; 
-  height: 738px;
+  height: 100%;
   background-color: #9E1B1B;
-  position: relative;
 }
 
 .doacao_texto,
 .doacao_titulo{
   background-color: #FFDFDF;
   padding: 10px 20px;
-  margin: 37px 30px;
+  margin: 45px 30px;
   border-radius: 20px;
 }
 
@@ -85,13 +92,13 @@ footer{
   outline: none;
 }
 
-#botao_enviar{
+#botao_proximo_container{
   display: flex;
   justify-content: flex-end;
   margin-right: 33px;
 }
 
-#botao_enviar input[type="submit"]{
+#botao_proximo{
   background: #FFDFDF;
   border: 0;
   border-radius: 20px;
@@ -101,7 +108,18 @@ footer{
   cursor: pointer;
 }
 
-.tabela_titulo{
+.tabela{
   color: #ffff;
   text-align: center;
+}
+
+#card_nome[hidden],
+#card_email[hidden],
+#card_idade[hidden],
+#card_peso[hidden],
+#card_tipo_sanguineo[hidden],
+#card_telefone[hidden],
+#card_cidade[hidden],
+#card_estado[hidden]{
+  display: none !important;
 }

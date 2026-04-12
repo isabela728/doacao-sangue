@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Doação de Sangue</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tabela.css">
 </head>
 <body>
 
@@ -27,30 +28,30 @@
                         <p>Preencha as informacoes abaixo para iniciarmos sua analise de adoção.</p>
                     </section>
 
-                    <section class="card">
+                    <section class="card" id="card_nome" hidden>
                         <label for="nome">Nome Completo</label>
                         <input type="text" id="nome" name="nome" placeholder="Seu Nome">
                     </section>
 
-                    <section class="card" hidden>
+                    <section class="card" id="card_email" hidden>
                         <label for="email">Email</label>
                         <input type="text" id="email" name="email" placeholder="seuemail@exemplo.com">
                     </section>
 
 
-                    <section class="card" hidden>
+                    <section class="card" id="card_idade" hidden>
                         <label for="idade">Idade</label>
                         <input type="text" id="idade" name="idade" placeholder="18">
                     </section>
 
 
-                    <section class="card"  hidden>
+                    <section class="card" id="card_peso" hidden>
                         <label for="peso">Peso</label>
                         <input type="text" id="peso" name="peso" placeholder="62">
                     </section>
 
 
-                    <section class="card" hidden>
+                    <section class="card" id="card_tipo_sanguineo" hidden>
                         <p class="tipo_texto">Tipo Sanguíneo</p>
                         <div id="tipo_container">
                             <label class="opcao" for="a_positivo">
@@ -90,37 +91,136 @@
                     </section>
 
 
-                    <section class="card"  hidden>
+                    <section class="card" id="card_telefone" hidden>
                         <label for="telefone">Telefone</label>
                         <input type="text" id="telefone" name="telefone" placeholder="(47) 99999-9999">
                     </section>
 
 
-                    <section class="card" hidden>
+                    <section class="card" id="card_cidade" hidden>
                         <label for="cidade">Cidade</label>
                         <input type="text" id="cidade" name="cidade" placeholder="Joinville">
                     </section>
 
 
-                    <section class="card" hidden>
+                    <section class="card" id="card_estado" hidden>
                         <label for="estado">Estado</label>
                         <input type="text" id="estado" name="estado" placeholder="Santa Catarina">
                     </section>
 
-
-                    <div id="botao_enviar">
-                        <input type="submit" id="botao_enviar_form">
+                    <div id="botao_proximo_container">
+                        <button id="botao_proximo">Próximo</button>    
                     </div>
+                    
 
                 </form>
 
             </div>
             
             
-            <div id="tabela">
+            <div id="tabela_cena">
 
-                <div class="tabela_titulo">
+                <div class="tabela">
                     <h1>Tabela de Compatibilidade</h1>
+
+                    <section class="container_compatibilidade" aria-label="Compatibilidade entre doador e receptor">
+                        <div id="titulo_superior"><b>DOADOR</b></div>
+                        <div id="titulo_lateral"><b>RECEPTOR</b></div>
+
+                        <div id="grid">
+                            <div class="celula_canto"></div>
+                            <div class="celula_cabecalho">O+</div>
+                            <div class="celula_cabecalho">O-</div>
+                            <div class="celula_cabecalho">A+</div>
+                            <div class="celula_cabecalho">A-</div>
+                            <div class="celula_cabecalho">B+</div>
+                            <div class="celula_cabecalho">B-</div>
+                            <div class="celula_cabecalho">AB+</div>
+                            <div class="celula_cabecalho">AB-</div>
+
+                            <div class="celula_lateral">O+</div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+
+                            <div class="celula_lateral">O-</div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+
+                            <div class="celula_lateral">A+</div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+
+                            <div class="celula_lateral">A-</div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+
+                            <div class="celula_lateral">B+</div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+
+                            <div class="celula_lateral">B-</div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+
+                            <div class="celula_lateral">AB+</div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_pode"></div>
+
+                            <div class="celula_lateral">AB-</div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode"></div>
+                        </div>
+                    </section>
+                    
+
                 </div>
 
             </div>    

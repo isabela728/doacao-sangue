@@ -1,0 +1,85 @@
+.container_compatibilidade {
+	position: relative;
+	margin: 18px auto 0;
+	padding: 22px 16px 16px 58px;
+	border-radius: 20px;
+}
+
+#titulo_superior{
+	width: 100%;
+    padding: 5px 0;
+	margin: 0 auto 14px;
+	background: #fff;
+	color: #000;
+	border-radius: 20px;
+	font-size: 18px;
+	text-align: center;
+}
+
+#titulo_lateral {
+	position: absolute;
+	left: 14px;
+	top: 72px;
+	bottom: 16px;
+	width: 31px;
+	background: #fff;
+	border-radius: 20px;
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	color: #000;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#grid{
+	display: grid;
+	grid-template-columns: 84px repeat(8, minmax(62px, 1fr));
+	gap: 10px;
+}
+
+.celula_canto,
+.celula_lateral,
+.celula_cabecalho,
+.celula_pode,
+.celula_nao {
+	min-height: 54px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.celula_canto {
+	background: transparent;
+}
+
+.celula_cabecalho,
+.celula_lateral {
+	background: #f00418;
+	color: #fff;
+	font-weight: 800;
+	font-size: 34px;
+	line-height: 1;
+}
+
+.celula_pode,
+.celula_nao {
+	background: #ececec;
+}
+
+.celula_pode::before {
+	content: "";
+	width: 34px;
+	height: 34px;
+	background: url("assets/gota-de-agua.svg") center/contain no-repeat;
+}
+
+.celula_nao::before {
+	content: "";
+	width: 34px;
+	height: 10px;
+	border-radius: 20px;
+	background: #b4b4b4;
+}
