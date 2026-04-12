@@ -1,4 +1,4 @@
-const mapaCompatibilidade = {
+const mapa_sanguineo = {
     o_positivo: "o_posi",
     o_negativo: "o_neg",
     a_positivo: "a_posi",
@@ -10,7 +10,7 @@ const mapaCompatibilidade = {
 }; //Sangues válidos
 
 function ativar(sangue) {
-    const tipo_sangue = mapaCompatibilidade[sangue]; // validação do sangue clicado
+    const tipo_sangue = mapa_sanguineo[sangue]; // validação do sangue clicado
     if (!tipo_sangue) return;
 
     const cabecalhoAtivo = document.getElementById(`${sangue}_tabela`);
@@ -52,6 +52,59 @@ if (form) {
     const mostrarErro = (mensagem, campo) => {
         alert(mensagem);
         campo?.focus();
+    }; //faz aparecer a mensagem de erro na questão específica  
+
+    const mapa_sanguineo_resposta = (valor) => {
+        const mapa_tipo_sanguineo = {
+            a_positivo: "A+",
+            a_negativo: "A-",
+            b_positivo: "B+",
+            b_negativo: "B-",
+            ab_positivo: "AB+",
+            ab_negativo: "AB-",
+            o_positivo: "O+",
+            o_negativo: "O-"
+        };
+
+        return mapa_tipo_sanguineo[valor] ?? valor;
+    };
+
+    const respostas = (dados) => {
+        let valor_resposta = document.getElementById("ultimo_envio");
+
+        if (!valor_resposta) {
+            valor_resposta = document.createElement("section");
+            valor_resposta.id = "ultimo_envio";
+            valor_resposta.className = "card";
+            form.insertAdjacentElement("afterend", valor_resposta); //insertAdjacentElement é usado para inserir um elemento específico em uma posição específica em relação a outro elemento. Neste caso, o valor_resposta vai ser inserido logo abaixo do formulário.
+        }
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = "Último formulário enviado";
+        valor_resposta.appendChild(titulo);
+
+        const lista = document.createElement("ul");
+
+        const campos = [
+            { chave: "nome", rotulo: "Nome" },
+            { chave: "email", rotulo: "Email" },
+            { chave: "idade", rotulo: "Idade" },
+            { chave: "peso", rotulo: "Peso" },
+            { chave: "tipo_sanguineo", rotulo: "Tipo sanguíneo" },
+            { chave: "telefone", rotulo: "Telefone" },
+            { chave: "cidade", rotulo: "Cidade" },
+            { chave: "estado", rotulo: "Estado" }
+        ];
+
+        campos.forEach(({ chave, rotulo }) => {
+            const item = document.createElement("li");
+            const valorBruto = dados[chave] ?? "";
+            const valor = chave === "tipo_sanguineo" ? mapa_sanguineo_resposta(valorBruto) : valorBruto;
+            item.textContent = `${rotulo}: ${valor || "-"}`;
+            lista.appendChild(item); //appendChild é usado para adicionar um novo elemento. Neste caso, estamos adicionando cada item da lista (li) como um filho do elemento lista (ul).
+        });
+
+        valor_resposta.appendChild(lista);
     };
 
     const validarQuestao = (indice) => {
@@ -265,6 +318,8 @@ if (form) {
         array_dados.estado = document.getElementById("estado")?.value.trim() ?? "";
 
         const dados_enviados = { ...array_dados };
+
+        respostas(dados_enviados);
 
         form.reset();
         questao_atual = 0;
