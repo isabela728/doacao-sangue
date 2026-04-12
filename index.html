@@ -124,8 +124,8 @@
                     <h1>Tabela de Compatibilidade</h1>
 
                     <section class="container_compatibilidade" aria-label="Compatibilidade entre doador e receptor">
-                        <div id="titulo_superior"><b>DOADOR</b></div>
-                        <div id="titulo_lateral"><b>RECEPTOR</b></div>
+                        <div id="titulo_superior"><b>RECEPTOR</b></div>
+                        <div id="titulo_lateral"><b>DOADOR</b></div>
 
                         <div id="grid">
                             <div class="celula_canto"></div>
@@ -138,101 +138,99 @@
                             <div class="celula_cabecalho">AB+</div>
                             <div class="celula_cabecalho">AB-</div>
 
-                            <div class="celula_lateral">O+</div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
+                            <div class="celula_lateral" id="o_positivo_tabela" onclick="ativar('o_positivo')">O+</div>
+                            <div class="celula_pode pode_o_posi" hidden></div>
                             <div class="celula_nao"></div>
+                            <div class="celula_pode pode_o_posi" hidden></div>
                             <div class="celula_nao"></div>
+                            <div class="celula_pode pode_o_posi" hidden></div>
                             <div class="celula_nao"></div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_nao"></div>
-
-                            <div class="celula_lateral">O-</div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_nao"></div>
+                            <div class="celula_pode pode_o_posi" hidden></div>
                             <div class="celula_nao"></div>
 
-                            <div class="celula_lateral">A+</div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
+                            <div class="celula_lateral" id="o_negativo_tabela" onclick="ativar('o_negativo')">O-</div>
+                            <div class="celula_pode pode_o_neg" hidden></div>
+                            <div class="celula_pode pode_o_neg" hidden></div>
+                            <div class="celula_pode pode_o_neg" hidden></div>
+                            <div class="celula_pode pode_o_neg" hidden></div>
+                            <div class="celula_pode pode_o_neg" hidden></div>
+                            <div class="celula_pode pode_o_neg" hidden></div>
+                            <div class="celula_pode pode_o_neg" hidden></div>
+                            <div class="celula_pode pode_o_neg" hidden></div>
+
+                            <div class="celula_lateral" id="a_positivo_tabela" onclick="ativar('a_positivo')">A+</div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode pode_a_posi" hidden></div>
                             <div class="celula_nao"></div>
                             <div class="celula_nao"></div>
                             <div class="celula_nao"></div>
+                            <div class="celula_pode pode_a_posi" hidden></div>
                             <div class="celula_nao"></div>
 
-                            <div class="celula_lateral">A-</div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_pode"></div>
+                            <div class="celula_lateral" id="a_negativo_tabela" onclick="ativar('a_negativo')">A-</div>
                             <div class="celula_nao"></div>
                             <div class="celula_nao"></div>
+                            <div class="celula_pode pode_a_neg" hidden></div>
+                            <div class="celula_pode pode_a_neg" hidden></div>
                             <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode pode_a_neg" hidden></div>
+                            <div class="celula_pode pode_a_neg" hidden></div>
+
+                            <div class="celula_lateral" id="b_positivo_tabela" onclick="ativar('b_positivo')">B+</div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode pode_b_posi" hidden></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode pode_b_posi" hidden></div>
                             <div class="celula_nao"></div>
 
-                            <div class="celula_lateral">B+</div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
+                            <div class="celula_lateral" id="b_negativo_tabela" onclick="ativar('b_negativo')">B-</div>
                             <div class="celula_nao"></div>
                             <div class="celula_nao"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
                             <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode pode_b_neg" hidden></div>
+                            <div class="celula_pode pode_b_neg" hidden></div>
+                            <div class="celula_pode pode_b_neg" hidden></div>
+                            <div class="celula_pode pode_b_neg" hidden></div>
+
+                            <div class="celula_lateral" id="ab_positivo_tabela" onclick="ativar('ab_positivo')">AB+</div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_nao"></div>
+                            <div class="celula_pode pode_ab_posi" hidden></div>
                             <div class="celula_nao"></div>
 
-                            <div class="celula_lateral">B-</div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_pode"></div>
+                            <div class="celula_lateral" id="ab_negativo_tabela" onclick="ativar('ab_negativo')">AB-</div>
                             <div class="celula_nao"></div>
                             <div class="celula_nao"></div>
                             <div class="celula_nao"></div>
-                            <div class="celula_pode"></div>
                             <div class="celula_nao"></div>
                             <div class="celula_nao"></div>
-
-                            <div class="celula_lateral">AB+</div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_pode"></div>
-
-                            <div class="celula_lateral">AB-</div>
                             <div class="celula_nao"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_pode"></div>
-                            <div class="celula_nao"></div>
-                            <div class="celula_pode"></div>
+                            <div class="celula_pode pode_ab_neg" hidden></div>
+                            <div class="celula_pode pode_ab_neg" hidden></div>
                         </div>
                     </section>
-                    
-
                 </div>
 
-            </div>    
+            </div>
         </div>
 
-        
-        
     </main>
 
     <footer>
         <p>&copy;2026 Isabela. Todos os direitos reservados</p>
     </footer>
-    
+
+    <script src="script.js" defer></script>
+
 </body>
 </html>

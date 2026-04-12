@@ -64,9 +64,21 @@
 	line-height: 1;
 }
 
+.celula_lateral{
+	cursor: pointer;
+}
+
 .celula_pode,
 .celula_nao {
 	background: #ececec;
+}
+
+#grid .celula_pode[hidden] {
+	display: flex;
+}
+
+#grid .celula_pode[hidden]::before {
+	opacity: 0;
 }
 
 .celula_pode::before {
@@ -74,12 +86,4 @@
 	width: 34px;
 	height: 34px;
 	background: url("assets/gota-de-agua.svg") center/contain no-repeat;
-}
-
-.celula_nao::before {
-	content: "";
-	width: 34px;
-	height: 10px;
-	border-radius: 20px;
-	background: #b4b4b4;
 }
