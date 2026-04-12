@@ -30,24 +30,24 @@
 
                     <section class="card" id="card_nome" hidden>
                         <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Seu Nome">
+                        <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
                     </section>
 
                     <section class="card" id="card_email" hidden>
                         <label for="email">Email</label>
-                        <input type="text" id="email" name="email" placeholder="seuemail@exemplo.com">
+                        <input type="text" id="email" name="email" placeholder="seuemail@exemplo.com" required>
                     </section>
 
 
                     <section class="card" id="card_idade" hidden>
                         <label for="idade">Idade</label>
-                        <input type="text" id="idade" name="idade" placeholder="18">
+                        <input type="text" id="idade" name="idade" placeholder="18" required>
                     </section>
 
 
                     <section class="card" id="card_peso" hidden>
                         <label for="peso">Peso</label>
-                        <input type="text" id="peso" name="peso" placeholder="62">
+                        <input type="text" id="peso" name="peso" placeholder="62" required>
                     </section>
 
 
@@ -108,8 +108,13 @@
                         <input type="text" id="estado" name="estado" placeholder="Santa Catarina">
                     </section>
 
-                    <div id="botao_proximo_container">
-                        <button id="botao_proximo">Próximo</button>    
+                    <div class="botao_container">
+                        <button type="button" id="botao_proximo">Próximo</button>
+                    </div>
+
+                    
+                    <div class="botao_container" hidden>
+                        <input type="submit" id="botao_enviar" value="Enviar" hidden>
                     </div>
                     
 

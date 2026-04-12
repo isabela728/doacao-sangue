@@ -92,13 +92,18 @@ footer{
   outline: none;
 }
 
-#botao_proximo_container{
+.botao_container{
   display: flex;
   justify-content: flex-end;
   margin-right: 33px;
 }
 
-#botao_proximo{
+.botao_container[hidden]{
+  display: none !important;
+}
+
+#botao_proximo,
+#botao_enviar{
   background: #FFDFDF;
   border: 0;
   border-radius: 20px;
@@ -120,6 +125,8 @@ footer{
 #card_tipo_sanguineo[hidden],
 #card_telefone[hidden],
 #card_cidade[hidden],
-#card_estado[hidden]{
+#card_estado[hidden],
+#botao_proximo[hidden],
+#botao_enviar[hidden]{
   display: none !important;
 }
